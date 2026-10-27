@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LessonAndroidStart</string>
+    <string name="button_text" translatable="false">Button</string>
 </resources>

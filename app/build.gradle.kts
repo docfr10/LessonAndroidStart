@@ -30,6 +30,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    // Подключение ViewBinding для упрощенного взаимодействия с UI элементами
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
