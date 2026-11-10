@@ -1,5 +1,6 @@
 package com.example.lessonandroidstart
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -114,6 +115,17 @@ class MainActivity : AppCompatActivity() {
 
         // Работа с WebView
         binding.webView.loadUrl("https://google.com")
+
+        // Переход на другую активность с текущей
+        binding.imageView.setOnClickListener {
+            // Создание намерения для перехода на другой экран
+            val intent = Intent(this, MainActivity2::class.java).apply {
+                // Передача данных с одного экрана на другой по ключу
+                putExtra("value", binding.editTextTextEmailAddress.text.toString())
+            }
+
+            startActivity(intent)
+        }
     }
 
     // Метод, запускающийся ПОСЛЕ onCreate и показывающий экран приложения
@@ -147,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("onRestart", "onRestart")
     }
 
-    // Метод, запускаемый после onStop и подготовливает приложение к закрытию
+    // Метод, запускаемый после onStop и подготавливает приложение к закрытию
     override fun onDestroy() {
         super.onDestroy()
         Log.e("onDestroy", "onDestroy")
